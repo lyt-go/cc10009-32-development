@@ -4,8 +4,9 @@ const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 export function request(path: string, init?: RequestInit): Promise<Response> {
   const url = path.startsWith('http') ? path : `${API_BASE}${path}`
   return fetch(url, {
-    headers: { 'Content-Type': 'application/json' },
     ...init,
+    // 允许调用方透传自定义头（如 X-User-Role 角色切换），默认带上 JSON 内容类型。
+    headers: { 'Content-Type': 'application/json', ...(init?.headers ?? {}) },
   }).catch((error: unknown) => {
     const detail = error instanceof Error ? error.message : '请求未送达'
     throw new Error(`接口请求失败：${detail}`)

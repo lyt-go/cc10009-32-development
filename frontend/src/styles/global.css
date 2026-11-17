@@ -33,3 +33,37 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .link { border: none; background: none; color: var(--brand); cursor: pointer; padding: 0; }
 .page-foot { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
 .error-text { color: #b42318; }
+.ok-text { color: #067647; }
+.muted { color: var(--muted); }
+
+/* 角色切换与标签页 */
+.role-switch { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+.role-switch select { padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; }
+.tab-bar { display: flex; gap: 6px; margin: 8px 0 12px; flex-wrap: wrap; }
+.tab-btn { border: 1px solid var(--border); background: #fff; border-radius: 6px 6px 0 0; padding: 7px 14px; cursor: pointer; font-size: 13px; }
+.tab-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+.table-wrap { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow-x: auto; }
+.data-table.compact th, .data-table.compact td { padding: 6px 8px; font-size: 12px; }
+.row-ok { background: #f1fbf5; }
+.row-abn { background: #fef3f2; }
+.row-actions .link:disabled { color: #9aa6b2; cursor: not-allowed; }
+
+/* 弹窗 */
+.modal-mask, .drawer-mask { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.45); display: flex; align-items: center; justify-content: center; z-index: 40; }
+.modal { background: #fff; border-radius: 10px; padding: 18px 20px; width: 420px; max-width: 92vw; }
+.modal h3 { margin: 0 0 14px; font-size: 16px; }
+.modal-field { display: block; margin-bottom: 12px; }
+.modal-field span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.modal-field input { width: 100%; padding: 7px 9px; border: 1px solid var(--border); border-radius: 6px; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+
+/* 明细抽屉 */
+.drawer-mask { justify-content: flex-end; }
+.drawer { background: #fff; width: 620px; max-width: 94vw; height: 100%; overflow-y: auto; box-shadow: -8px 0 24px rgba(15, 23, 42, 0.18); }
+.drawer-head { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: #fff; }
+.drawer-head h3 { margin: 0; font-size: 16px; }
+.drawer-body { padding: 14px 18px; }
+.drawer-body section { margin-bottom: 18px; }
+.drawer-body h4 { font-size: 14px; margin: 0 0 8px; border-left: 3px solid var(--brand); padding-left: 8px; }
+.kv-list { list-style: none; margin: 0; padding: 0; font-size: 13px; line-height: 1.9; }
+.kv-list li { border-bottom: 1px dashed var(--border); }
